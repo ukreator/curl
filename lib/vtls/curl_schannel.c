@@ -145,7 +145,8 @@ schannel_connect_step1(struct connectdata *conn, int sockindex)
                               SCH_CRED_IGNORE_REVOCATION_OFFLINE;
 #else
       schannel_cred.dwFlags = SCH_CRED_AUTO_CRED_VALIDATION |
-                              SCH_CRED_REVOCATION_CHECK_CHAIN;
+                              SCH_CRED_REVOCATION_CHECK_CHAIN |
+                              SCH_CRED_IGNORE_NO_REVOCATION_CHECK;
 #endif
       infof(data, "schannel: checking server certificate revocation\n");
     }
